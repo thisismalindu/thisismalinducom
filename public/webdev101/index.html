@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Welcome to this Course - Web Dev 101 - Complete Course Documentation and Exercises</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/custom.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Introduction</li><li class="chapter-item expanded "><a href="index.html" class="active"><strong aria-hidden="true">1.</strong> Welcome to this Course</a></li><li class="chapter-item expanded "><a href="how-to-use-book.html"><strong aria-hidden="true">2.</strong> How to use this book</a></li><li class="chapter-item expanded "><a href="how-to-use-videos.html"><strong aria-hidden="true">3.</strong> How to use Videos</a></li><li class="chapter-item expanded "><a href="get-the-best-out-of-this-course.html"><strong aria-hidden="true">4.</strong> How to get the best out of this course</a></li><li class="chapter-item expanded "><a href="exercises.html"><strong aria-hidden="true">5.</strong> Exercise</a></li><li class="chapter-item expanded affix "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="what-are-we-doing.html"><strong aria-hidden="true">6.</strong> What are we doing?</a></li><li class="chapter-item expanded "><a href="installing-a-code-editor.html"><strong aria-hidden="true">7.</strong> Installing a Code Editor</a></li><li class="chapter-item expanded "><a href="webdev-basics.html"><strong aria-hidden="true">8.</strong> Web Development Basics</a></li><li class="chapter-item expanded "><a href="html-basics.html"><strong aria-hidden="true">9.</strong> HTML Basics</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Web Dev 101 - Complete Course Documentation and Exercises</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="welcome-to-the-web-dev-101-course-"><a class="header" href="#welcome-to-the-web-dev-101-course-">Welcome to the Web Dev 101 Course 📚</a></h1>
+<p><em>This Course is in Sinhala (සිංහල). If you are a non-native speaker, this tutorial isn't for you.</em></p>
+<p><em>මේ course එක සම්පූර්ණයෙන්ම FREE, කවුරුහරි මේක ඔයාට විකුණුවා නම් අනිවාරෙන් සල්ලි ටික ආපහු ඉල්ලගන්න. මේ වගේ දේවල් වලට මං කිසි සේත් වගකියන්නෙ නෑ. මේ කෝස් එකේ කිසිම දෙයකට සල්ලි ඉල්ලන්නෙ නෑ. හැමදෙයක්ම 100% FREE. ඒ වගේම තමා කවුරුහරි විකුණනවා දැක්කොත් ඒ කෙනාව හැකිතාක් විවේචනය කරන්න කියලා මං ඔයාගෙන් ඉල්ලනවා.</em></p>
+<p><a href="https://www.youtube.com/watch?v=DI41YuUqQCE">Watch the Related Video 👇 <img src="https://i3.ytimg.com/vi/DI41YuUqQCE/maxresdefault.jpg" alt="Related Video" /></a></p>
+<p><a href="https://www.youtube.com/playlist?list=PLPakpWqrbWwxN42PUqe3yhJFpJios5bxE">Complete YouTube Playlist for this Course</a></p>
+<h2 id="hello-"><a class="header" href="#hello-">Hello 👋</a></h2>
+<p>ආයුබෝවන් කියල පිලිගන්නවා මේ කෝස් එකට. මේ කෝස් එකේදි අපි මුල සිට අගට, HTML, CSS, JS වලින් websites හදන හැටි කියල දෙනවා. මේ course එකෙන් පස්සෙ ඔයාට කිසි ගැටලුවක් නැතිව websites හදන්න පුලුවන් Confident Web Developer කෙනෙක් වෙන්න පුලුවන් වෙයි.</p>
+<p>මේ course එක තියරි වලට බර නොදී practically අත්‍යවශ්‍ය වන දේවල් වලටයි focus එක දෙන්නෙ. ඒක නිසා කම්මැළි හිතෙන්නෙ නැතිව ඔයාට ලේසියෙන්ම videos දෙක තුනක් බලලා website එකක් හදන්න පටන් ගන්න වුනත් පුලුවන් වේවි.</p>
+<p>මේ course එක videos විදිහට තමා මූලිකව run වෙන්නෙ. හැබැයි ඒකත් එක්ක යාබදව මේ <a href="how-to-use-book.html">e-book</a> එකත් යනවා. මේකෙ හැම <a href="how-to-use-videos.html">video</a> එකටම අදාල අමතර කරුණු වැඩිදුර අධ්‍යන කටයුතු කරන්න අවශ්‍ය resources වගේම ඒ පාඩමට අවශ්‍ය <a href="exercises.html">exercises &amp; questions</a> අන්තර්ගත වෙනවා. මේ සියල්ල හැම video එකටම අදාලව හරියට කරොත් තමා ඔයාට හරියටම මේ වැඩේ සාර්ථක කරගන්න පුලුවන් වෙන්නේ.</p>
+<div style="  overflow: hidden;
+padding:0 0  2rem 0;
+                border-radius:2rem;
+        border:1px solid #1B2025; 
+        margin:0;">
+<img src="cover.png" style="border-bottom:4px solid #1B2025;">
+<div style="
+display:flex;
+flex-direction:column;
+        align-items:center;
+        justify-content:center;margin:0; text-align:center;">
+<p><a href="https://thisismalindu.com/ig" target="_blank"><img style=" background-color:#1B2025;
+border:3px solid #1B2025; cursor:pointer; 
+        border-radius:50%;
+        width:10rem;margin:0; margin-top:-7rem;" src="dp.jpg" alt="Malindu Bandara Portrait"></a></p>
+<div style="padding:0;
+        display:flex;
+        flex-direction:column;
+        gap:0;margin:0;">
+<h2 style="margin:0; ">Malindu Bandara</h2>
+<h4 style="margin:0; opacity:0.1 font-weight:normal;">Founder of <a href="https://sciber.dev/yt" target="_blank">sciber.dev</a></h4>
+</div>
+</div>
+<p style="padding:0 3rem; opacity:0.5; font-size:1.4rem; text-align:justify;">
+Hi, I'm Malindu Bandara, the creator of the WebDev101 course. I'm passionate about making education
+accessible to everyone, and I want to make this course the best course for you to learn web development. My
+course is free, and I'm confident that it will surpass even the paid courses on the island.
+I'm a designer, coder, and math enthusiast, and I'm the founder of Sciber. I have over 1 million views on
+YouTube and a fast-growing TikTok following, which proves that I have the skills and experience to teach you
+web development.
+I hope you get the best out of this course. I've put a lot of hard work into it, and I'm confident that
+you'll learn a lot.
+</p>
+</div>
+<p>එහෙනම් අපි ඊලඟ section එකට ගිහින් බලමු තව මොනවද මේ <a href="readme.html">Introduction Chapter</a> එකෙදි දැනගන්න ඕනෙ කියලා.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="how-to-use-book.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="how-to-use-book.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

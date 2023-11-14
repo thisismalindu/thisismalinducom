@@ -1,0 +1,52 @@
+{
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [ 
+      {
+        "source": "/fb",
+        "destination": "https://fb.com/thisismalindu",
+        "type": 301
+       },
+       {
+        "source": "/ig",
+        "destination": "https://instagram.com/thisismalindu",
+        "type": 301
+       },
+       {
+        "source": "/yt",
+        "destination": "https://youtube.com/@thisismalindu",
+        "type": 301
+       },
+       {
+        "source": "/tiktok",
+        "destination": "https://tiktok.com/@thisismalindu",
+        "type": 301
+       },
+       {
+        "source": "/gh",
+        "destination": "https://github.com/thisismalindu",
+        "type": 301
+       },
+       {
+        "source": "/tw",
+        "destination": "https://x.com/thisismalindu",
+        "type": 301
+       },
+       {
+        "source": "/tg",
+        "destination": "https://t.me/thisismalindu",
+        "type": 301
+       },
+       {
+        "source": "/wa",
+        "destination": "https://wa.me/+94757768268",
+        "type": 301
+       }
+   ]
+  }
+}
