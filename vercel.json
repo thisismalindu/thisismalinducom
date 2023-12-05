@@ -1,11 +1,4 @@
 {
-  "routes": [
-    {
-      "src": "/contact",
-      "headers": { "Location": "mailto:thisismalindu@gmail.com" },
-      "status": 301
-    }
-  ],
   "redirects": [
     {
       "source": "/webdev101/:path*",
