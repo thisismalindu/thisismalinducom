@@ -6,6 +6,11 @@
       "statusCode": 301
     },
     {
+      "source": "/courses",
+      "destination": "https://webdev101.thisismalindu.com/",
+      "statusCode": 301
+    },
+    {
       "source": "/contact",
       "destination": "mailto:lhmmdilanka@gmail.com",
       "statusCode": 301
