@@ -10,7 +10,7 @@ import {
 
 const socialItems = [
   { name: <FaFacebook />, link: "/facebook" },
-  { name: <FaInstagram />, link: "/instagra," },
+  { name: <FaInstagram />, link: "/instagram" },
   { name: <FaGithub />, link: "/github" },
   { name: <FaYoutube />, link: "/youtube" },
   { name: <FaTiktok />, link: "/tiktok" },
