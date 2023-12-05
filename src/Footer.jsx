@@ -59,7 +59,7 @@ export default function Footer() {
           >
             TailwindCSS
           </a>{" "}
-          ❤
+          🤍
         </p>
       </div>
     </footer>
