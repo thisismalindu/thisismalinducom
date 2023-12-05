@@ -12,7 +12,7 @@
     },
     {
       "source": "/contact",
-      "destination": "mailto:lhmmdilanka@gmail.com",
+      "destination": "/telegram",
       "statusCode": 301
     },
     {
