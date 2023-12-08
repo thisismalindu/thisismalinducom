@@ -6,6 +6,11 @@
       "statusCode": 301
     },
     {
+      "source": "/main.cpp",
+      "destination": "https://gist.github.com/thisismalindu/cb0b1bdf8938641596e0a0eb0f18231b",
+      "statusCode": 301
+    },
+    {
       "source": "/courses",
       "destination": "https://webdev101.thisismalindu.com/",
       "statusCode": 301
