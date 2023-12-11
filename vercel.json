@@ -47,7 +47,7 @@
     },
     {
       "source": "/downloads",
-      "destination": "https://webdev101.thisismalindu.com/downloads",
+      "destination": "https://thisismalindu.github.io/thisismalindu/downloads",
       "statusCode": 301
     },
     {
