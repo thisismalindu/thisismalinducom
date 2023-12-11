@@ -121,6 +121,16 @@
       "statusCode": 301
     },
     {
+      "source": "/gh/:path*",
+      "destination": "https://github.com/thisismalindu/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/github/:path*",
+      "destination": "https://github.com/thisismalindu/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/tw",
       "destination": "https://x.com/thisismalindu",
       "statusCode": 301
