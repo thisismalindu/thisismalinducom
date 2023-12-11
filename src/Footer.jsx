@@ -36,7 +36,7 @@ export default function Footer() {
           &copy; 2023 Malindu Bandara &nbsp;·&nbsp;
           <a
             className="underline"
-            href="https://github.com/thisismalindu/thisismalinducom"
+            href="https://github.com/thisismalindu/thisismalindu"
             target="_blank"
           >
             Source code (MIT)
