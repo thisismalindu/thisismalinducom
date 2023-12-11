@@ -51,6 +51,11 @@
       "statusCode": 301
     },
     {
+      "source": "/downloads/:path*",
+      "destination": "https://thisismalindu.github.io/www/downloads/:path*",
+      "statusCode": 301
+    },
+    {
       "source": "/courses",
       "destination": "https://webdev101.thisismalindu.com/",
       "statusCode": 301
