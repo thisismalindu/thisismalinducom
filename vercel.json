@@ -7,12 +7,12 @@
     },
     {
       "source": "/extra/:path*",
-      "destination": "https://thisismalindu.github.io/thisismalindu/:path*",
+      "destination": "https://thisismalindu.github.io/www/:path*",
       "statusCode": 301
     },
     {
       "source": "/extra/",
-      "destination": "https://thisismalindu.github.io/thisismalindu/",
+      "destination": "https://thisismalindu.github.io/www/",
       "statusCode": 301
     },
     {
@@ -22,17 +22,17 @@
     },
     {
       "source": "/imagegallery.html",
-      "destination": "https://thisismalindu.github.io/thisismalindu/imagegallery.html",
+      "destination": "https://thisismalindu.github.io/www/imagegallery.html",
       "statusCode": 301
     },
     {
       "source": "/html-css-only.html",
-      "destination": "https://thisismalindu.github.io/thisismalindu/html-css-only.html",
+      "destination": "https://thisismalindu.github.io/www/html-css-only.html",
       "statusCode": 301
     },
     {
       "source": "/basicwebsite.html",
-      "destination": "https://thisismalindu.github.io/thisismalindu/basicwebsite.html",
+      "destination": "https://thisismalindu.github.io/www/basicwebsite.html",
       "statusCode": 301
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "source": "/downloads",
-      "destination": "https://thisismalindu.github.io/thisismalindu/downloads",
+      "destination": "https://thisismalindu.github.io/www/downloads",
       "statusCode": 301
     },
     {
