@@ -19,8 +19,8 @@ export default function Header() {
           />
         </h1>
         <p className="mono tracking-tight max-w-2xl">
-          An Aspiring FullStack Developer, Graphic Designer, Content Creator,
-          and Engineering Student from Sri Lanka.
+          An Engineering Student, Graphic Designer, Content Creator,
+          and Photography Hobbyist from Sri Lanka.
         </p>
         <div className="flex gap-4">
           <Button primary={true} href="/courses">
